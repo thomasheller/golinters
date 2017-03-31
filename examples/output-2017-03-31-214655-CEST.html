@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<style>
+			html, body {
+				font-family: Arial, sans-serif;
+			}
+			tt {
+				font-family: Menlo, monospace;
+			}
+			table, th, td {
+				border: 1px solid #000;
+				border-collapse: collapse;
+			}
+			th, td {
+				padding: .33em;
+			}
+			td.t, td.f {
+				text-align: center;
+			}
+			td.t {
+				background-color: #5bd64a;
+			}
+			td.f {
+				background-color: #d64a4a;
+			}
+			td.notes, .timestamp {
+				font-size: small;
+			}
+		</style>
+	</head>
+	<body>
+		<table>
+			<thead>
+				<tr>
+					<th colspan="3">General info</th>
+					<th colspan="3">Input</th>
+					<th colspan="3">Metalinter support</th>
+					<th rowspan="2">Notes</th>
+				</tr>
+				<tr>
+					<th>Name</th>
+					<th>Maintainer</th>
+					<th>Repository URL</th>
+					<th><tt>go/parser</tt></th>
+					<th><tt>go/loader</tt></th>
+					<th><tt>go/ssa</tt></th>
+					<th><tt>gometalinter</tt></th>
+					<th><tt>metalint</tt></th>
+					<th><tt>Checker</tt></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>aligncheck</td>
+					<td>opennota</td>
+					<td><a href="https://github.com/opennota/check">https://github.com/opennota/check</a></td>
+					<td class="t">Y</td>
+					<td class="t">Y</td>
+					<td class="f">N</td>
+					<td class="t">Y</td>
+					<td class="f">N</td>
+					<td class="f">N</td>
+					<td class="notes"></td>
+				</tr><tr>
+					<td>deadcode</td>
+					<td>Tomás Senart</td>
+					<td><a href="https://github.com/tsenart/deadcode">https://github.com/tsenart/deadcode</a></td>
+					<td class="t">Y</td>
+					<td class="f">N</td>
+					<td class="f">N</td>
+					<td class="t">Y</td>
+					<td class="f">N</td>
+					<td class="f">N</td>
+					<td class="notes"></td>
+				</tr><tr>
+					<td>dupl</td>
+					<td>Michal Bohuslávek</td>
+					<td><a href="https://github.com/mibk/dupl">https://github.com/mibk/dupl</a></td>
+					<td class="t">Y</td>
+					<td class="f">N</td>
+					<td class="f">N</td>
+					<td class="t">Y</td>
+					<td class="f">N</td>
+					<td class="f">N</td>
+					<td class="notes"></td>
+				</tr><tr>
+					<td>errcheck</td>
+					<td>Kamil Kisiel</td>
+					<td><a href="https://github.com/kisielk/errcheck">https://github.com/kisielk/errcheck</a></td>
+					<td class="t">Y</td>
+					<td class="t">Y</td>
+					<td class="f">N</td>
+					<td class="t">Y</td>
+					<td class="f">N</td>
+					<td class="f">N</td>
+					<td class="notes"></td>
+				</tr><tr>
+					<td>gas</td>
+					<td>Go AST Scanner</td>
+					<td><a href="https://github.com/GoASTScanner/gas">https://github.com/GoASTScanner/gas</a></td>
+					<td class="t">Y</td>
+					<td class="f">N</td>
+					<td class="f">N</td>
+					<td class="t">Y</td>
+					<td class="f">N</td>
+					<td class="f">N</td>
+					<td class="notes"></td>
+				</tr><tr>
+					<td>goconst</td>
+					<td>Jonathan Gautheron</td>
+					<td><a href="https://github.com/jgautheron/goconst">https://github.com/jgautheron/goconst</a></td>
+					<td class="t">Y</td>
+					<td class="f">N</td>
+					<td class="f">N</td>
+					<td class="t">Y</td>
+					<td class="f">N</td>
+					<td class="f">N</td>
+					<td class="notes"></td>
+				</tr><tr>
+					<td>gocyclo</td>
+					<td>fzipp</td>
+					<td><a href="https://github.com/fzipp/gocyclo">https://github.com/fzipp/gocyclo</a></td>
+					<td class="t">Y</td>
+					<td class="f">N</td>
+					<td class="f">N</td>
+					<td class="t">Y</td>
+					<td class="f">N</td>
+					<td class="f">N</td>
+					<td class="notes">gometalinter uses a fork: github.com/alecthomas/gocyclo</td>
+				</tr><tr>
+					<td>gofmt</td>
+					<td>Go</td>
+					<td><a href="https://github.com/golang/go">https://github.com/golang/go</a></td>
+					<td class="t">Y</td>
+					<td class="f">N</td>
+					<td class="f">N</td>
+					<td class="t">Y</td>
+					<td class="f">N</td>
+					<td class="f">N</td>
+					<td class="notes"></td>
+				</tr><tr>
+					<td>goimports</td>
+					<td>Go</td>
+					<td><a href="https://github.com/golang/tools">https://github.com/golang/tools</a></td>
+					<td class="t">Y</td>
+					<td class="f">N</td>
+					<td class="f">N</td>
+					<td class="t">Y</td>
+					<td class="f">N</td>
+					<td class="f">N</td>
+					<td class="notes"></td>
+				</tr><tr>
+					<td>golint</td>
+					<td>Go</td>
+					<td><a href="https://github.com/golang/lint">https://github.com/golang/lint</a></td>
+					<td class="t">Y</td>
+					<td class="f">N</td>
+					<td class="f">N</td>
+					<td class="t">Y</td>
+					<td class="f">N</td>
+					<td class="f">N</td>
+					<td class="notes"></td>
+				</tr><tr>
+					<td>gosimple</td>
+					<td>Dominik Honnef</td>
+					<td><a href="https://github.com/dominikh/go-tools">https://github.com/dominikh/go-tools</a></td>
+					<td class="t">Y</td>
+					<td class="t">Y</td>
+					<td class="f">N</td>
+					<td class="t">Y</td>
+					<td class="f">N</td>
+					<td class="f">N</td>
+					<td class="notes"></td>
+				</tr><tr>
+					<td>gotype</td>
+					<td>Go</td>
+					<td><a href="https://github.com/golang/tools">https://github.com/golang/tools</a></td>
+					<td class="t">Y</td>
+					<td class="f">N</td>
+					<td class="f">N</td>
+					<td class="t">Y</td>
+					<td class="f">N</td>
+					<td class="f">N</td>
+					<td class="notes"></td>
+				</tr><tr>
+					<td>ineffassign</td>
+					<td>Gordon Klaus</td>
+					<td><a href="https://github.com/gordonklaus/ineffassign">https://github.com/gordonklaus/ineffassign</a></td>
+					<td class="t">Y</td>
+					<td class="f">N</td>
+					<td class="f">N</td>
+					<td class="t">Y</td>
+					<td class="f">N</td>
+					<td class="f">N</td>
+					<td class="notes"></td>
+				</tr><tr>
+					<td>interfacer</td>
+					<td>Daniel Martí</td>
+					<td><a href="https://github.com/mvdan/interfacer">https://github.com/mvdan/interfacer</a></td>
+					<td class="t">Y</td>
+					<td class="t">Y</td>
+					<td class="t">Y</td>
+					<td class="t">Y</td>
+					<td class="f">N</td>
+					<td class="t">Y</td>
+					<td class="notes"></td>
+				</tr><tr>
+					<td>lll</td>
+					<td>Fredrik Wallgren</td>
+					<td><a href="https://github.com/walle/lll">https://github.com/walle/lll</a></td>
+					<td class="f">N</td>
+					<td class="f">N</td>
+					<td class="f">N</td>
+					<td class="t">Y</td>
+					<td class="f">N</td>
+					<td class="f">N</td>
+					<td class="notes"></td>
+				</tr><tr>
+					<td>misspell</td>
+					<td>Nick Galbreath</td>
+					<td><a href="https://github.com/client9/misspell">https://github.com/client9/misspell</a></td>
+					<td class="f">N</td>
+					<td class="f">N</td>
+					<td class="f">N</td>
+					<td class="t">Y</td>
+					<td class="f">N</td>
+					<td class="f">N</td>
+					<td class="notes"></td>
+				</tr><tr>
+					<td>safesql</td>
+					<td>Stripe</td>
+					<td><a href="https://github.com/stripe/safesql">https://github.com/stripe/safesql</a></td>
+					<td class="t">Y</td>
+					<td class="t">Y</td>
+					<td class="t">Y</td>
+					<td class="t">Y</td>
+					<td class="f">N</td>
+					<td class="f">N</td>
+					<td class="notes"></td>
+				</tr><tr>
+					<td>staticcheck</td>
+					<td>Dominik Honnef</td>
+					<td><a href="https://github.com/dominikh/go-tools">https://github.com/dominikh/go-tools</a></td>
+					<td class="t">Y</td>
+					<td class="t">Y</td>
+					<td class="f">N</td>
+					<td class="t">Y</td>
+					<td class="f">N</td>
+					<td class="f">N</td>
+					<td class="notes"></td>
+				</tr><tr>
+					<td>structcheck</td>
+					<td>opennota</td>
+					<td><a href="https://github.com/opennota/check">https://github.com/opennota/check</a></td>
+					<td class="t">Y</td>
+					<td class="t">Y</td>
+					<td class="f">N</td>
+					<td class="t">Y</td>
+					<td class="f">N</td>
+					<td class="f">N</td>
+					<td class="notes"></td>
+				</tr><tr>
+					<td>unconvert</td>
+					<td>Matthew Dempsky</td>
+					<td><a href="https://github.com/mdempsky/unconvert">https://github.com/mdempsky/unconvert</a></td>
+					<td class="t">Y</td>
+					<td class="t">Y</td>
+					<td class="f">N</td>
+					<td class="t">Y</td>
+					<td class="f">N</td>
+					<td class="f">N</td>
+					<td class="notes"></td>
+				</tr><tr>
+					<td>unparam</td>
+					<td>Daniel Martí</td>
+					<td><a href="https://github.com/mvdan/unparam">https://github.com/mvdan/unparam</a></td>
+					<td class="t">Y</td>
+					<td class="t">Y</td>
+					<td class="t">Y</td>
+					<td class="t">Y</td>
+					<td class="t">Y</td>
+					<td class="t">Y</td>
+					<td class="notes"></td>
+				</tr><tr>
+					<td>unused</td>
+					<td>Dominik Honnef</td>
+					<td><a href="https://github.com/dominikh/go-tools">https://github.com/dominikh/go-tools</a></td>
+					<td class="t">Y</td>
+					<td class="t">Y</td>
+					<td class="f">N</td>
+					<td class="t">Y</td>
+					<td class="f">N</td>
+					<td class="f">N</td>
+					<td class="notes"></td>
+				</tr><tr>
+					<td>varcheck</td>
+					<td>opennota</td>
+					<td><a href="https://github.com/opennota/check">https://github.com/opennota/check</a></td>
+					<td class="t">Y</td>
+					<td class="t">Y</td>
+					<td class="f">N</td>
+					<td class="t">Y</td>
+					<td class="f">N</td>
+					<td class="f">N</td>
+					<td class="notes"></td>
+				</tr><tr>
+					<td>vet</td>
+					<td>Go</td>
+					<td><a href="https://github.com/golang/go">https://github.com/golang/go</a></td>
+					<td class="t">Y</td>
+					<td class="f">N</td>
+					<td class="f">N</td>
+					<td class="t">Y</td>
+					<td class="f">N</td>
+					<td class="f">N</td>
+					<td class="notes"></td>
+				</tr><tr>
+					<td>vetshadow</td>
+					<td>Go</td>
+					<td><a href="https://github.com/golang/go">https://github.com/golang/go</a></td>
+					<td class="t">Y</td>
+					<td class="f">N</td>
+					<td class="f">N</td>
+					<td class="t">Y</td>
+					<td class="f">N</td>
+					<td class="f">N</td>
+					<td class="notes">same linter as vet, just run with --shadow</td>
+				</tr>
+			</tbody>
+		</table>
+		<p class="timestamp">Fri, 31 Mar 2017 21:46:55 CEST</p>
+	</body>
+</html>
