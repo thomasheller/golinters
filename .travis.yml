@@ -7,6 +7,7 @@ before_install:
  - go get github.com/mattn/goveralls
 
 install:
+  - go get -d -v ./...
   - go build -v -o golinters cmd/golinters/main.go
 
 script:
