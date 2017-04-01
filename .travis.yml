@@ -6,9 +6,12 @@ go:
 before_install:
  - go get github.com/mattn/goveralls
 
+install:
+  - go build -v -o golinters cmd/golinters/main.go
+
 script:
   - $HOME/gopath/bin/goveralls -service=travis-ci
 
 after_success:
-  - pwd
-  - $TRAVIS_BUILD_DIR/golinters -output=output-$(date +%Y-%m-%d-%H%M%S-%Z).html
+  - export GOLINTERS_OUTPUT=output-$(date +%Y-%m-%d-%H%M%S-%Z).html
+  - ./golinters -output=$GOLINTERS_OUTPUT
