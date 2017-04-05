@@ -31,7 +31,7 @@ func list() []linter {
 		// {"test", "go test {path}:^--- FAIL:", "github.com/golang/go/src/cmd/go/internal/test", ""}, // TODO
 		// {"testify", "go test {path}:Location:", "github.com/golang/go/src/cmd/go/internal/test", "essentially the same as test, gometalinter parses the output differently"}, // TODO
 		{"unconvert", "unconvert", "github.com/mdempsky/unconvert", ""},
-		{"unparam", "unparam", "github.com/mvdan/unparam/check", ""},
+		{"unparam", "unparam", "github.com/mvdan/unparam", ""},
 		{"unused", "unused", "honnef.co/go/tools/cmd/unused", ""},
 		{"varcheck", "varcheck", "github.com/opennota/check/cmd/varcheck", ""},
 		{"vet", "go tool vet {path}", "github.com/golang/go/src/cmd/vet", ""}, // include "{path}" so it's different from "--shadow"

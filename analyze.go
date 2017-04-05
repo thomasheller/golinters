@@ -33,6 +33,12 @@ type result struct {
 	Gometalinter bool
 	Metalint     bool
 	Checker      bool
+	Flag         bool
+	GoArg        bool
+	GoFlags      bool
+	Kingpin      bool
+	Pflag        bool
+	Sflags       bool
 	Notes        string
 }
 
@@ -126,6 +132,23 @@ func details(l linter, a *repo.GitHubAuth) (result, error) {
 			r.GoSSA = true
 		case "github.com/mvdan/lint":
 			r.Checker = true
+		case "flag":
+			r.Flag = true
+		}
+		if strings.Contains(pkg, "github.com/alexflint/go-arg") {
+			r.GoArg = true
+		}
+		if strings.Contains(pkg, "github.com/jessevdk/go-flags") {
+			r.GoFlags = true
+		}
+		if strings.Contains(pkg, "github.com/spf13/pflag") {
+			r.Pflag = true
+		}
+		if strings.Contains(pkg, "github.com/octago/sflags/gen/gflag") {
+			r.Sflags = true
+		}
+		if strings.Contains(pkg, "gopkg.in/alecthomas/kingpin") {
+			r.Kingpin = true
 		}
 	}
 
@@ -254,6 +277,7 @@ const htmlTemplate = `<!DOCTYPE html>
 					<th colspan="3">General info</th>
 					<th colspan="3">Input</th>
 					<th colspan="3">Metalinter support</th>
+					<th colspan="6">Options</th>
 					<th rowspan="2">Notes</th>
 				</tr>
 				<tr>
@@ -266,6 +290,12 @@ const htmlTemplate = `<!DOCTYPE html>
 					<th><tt>gometalinter</tt></th>
 					<th><tt>metalint</tt></th>
 					<th><tt>Checker</tt></th>
+					<th><tt>flag</tt></th>
+					<th><tt>go-arg</tt></th>
+					<th><tt>go-flags</tt></th>
+					<th><tt>kingpin</tt></th>
+					<th><tt>pflag</tt></th>
+					<th><tt>sflags</tt></th>
 				</tr>
 			</thead>
 			<tbody>
@@ -279,6 +309,12 @@ const htmlTemplate = `<!DOCTYPE html>
 					{{ if .Gometalinter }}<td class="t">Y</td>{{ else }}<td class="f">N</td>{{ end }}
 					{{ if .Metalint }}<td class="t">Y</td>{{ else }}<td class="f">N</td>{{ end }}
 					{{ if .Checker }}<td class="t">Y</td>{{ else }}<td class="f">N</td>{{ end }}
+					{{ if .Flag }}<td class="t">Y</td>{{ else }}<td class="f">N</td>{{ end }}
+					{{ if .GoArg }}<td class="t">Y</td>{{ else }}<td class="f">N</td>{{ end }}
+					{{ if .GoFlags }}<td class="t">Y</td>{{ else }}<td class="f">N</td>{{ end }}
+					{{ if .Kingpin }}<td class="t">Y</td>{{ else }}<td class="f">N</td>{{ end }}
+					{{ if .Pflag }}<td class="t">Y</td>{{ else }}<td class="f">N</td>{{ end }}
+					{{ if .Sflags }}<td class="t">Y</td>{{ else }}<td class="f">N</td>{{ end }}
 					<td class="notes">{{ .Notes }}</td>
 				</tr>{{ end }}
 			</tbody>
