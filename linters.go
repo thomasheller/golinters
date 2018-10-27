@@ -18,7 +18,7 @@ func list() []linter {
 		{"gocyclo", "gocyclo", "github.com/fzipp/gocyclo", "gometalinter uses a fork: github.com/alecthomas/gocyclo"},
 		{"gofmt", "gofmt -l -s", "github.com/golang/go/src/cmd/gofmt", ""},
 		{"goimports", "goimports", "golang.org/x/tools/cmd/goimports", ""},
-		{"golint", "golint", "github.com/golang/lint/golint", ""},
+		{"golint", "golint", "golang.org/x/lint/golint", ""},
 		{"gosimple", "gosimple", "honnef.co/go/tools/cmd/gosimple", ""},
 		{"gotype", "gotype", "golang.org/x/tools/cmd/gotype", ""},
 		{"ineffassign", "ineffassign", "github.com/gordonklaus/ineffassign", ""},
